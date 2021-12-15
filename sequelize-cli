@@ -1,0 +1,5 @@
+// npx sequelize-cli seed:generate --name user --password
+
+npx sequelize-cli migration:generate --name create-user
+
+npx sequelize-cli db:migrate
