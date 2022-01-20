@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "nodemon src/index.js",
+    "test": "jest --no-cache --runInBand --forceExit --detectOpenHandles --watchAll",
+    "pre-commit": "jest --no-cache --runInBand --forceExit --detectOpenHandles"
   },
   "repository": {
     "type": "git",
@@ -29,9 +31,9 @@
   },
   "devDependencies": {
     "ghooks": "^2.0.4",
-    "jest": "^27.4.5",
+    "jest": "^27.4.7",
     "nodemon": "^2.0.15",
     "sequelize-cli": "^6.3.0",
-    "supertest": "^6.1.6"
+    "supertest": "^6.2.2"
   }
 }
