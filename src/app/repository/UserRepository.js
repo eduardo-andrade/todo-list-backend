@@ -2,26 +2,16 @@ const User = require("../model/User");
 const {generateHash} = require("../helpers/crypt");
 const {ErrorHandler} = require("../helpers/error");
 
-class UserRespository{
+class UserRepository{
     async create(name, email, password){
         try{
-            if(
-                name == "" || 
-                email == "" || 
-                password == "" || 
-                name == null || 
-                email == null || 
-                password == null
-            ){
-                throw new ErrorHandler(400, "Fill in all fields");
-            }
 
-            const userExits = await User.findOnde({
+            const userExists = await User.findOne({
                 where: { 
                     email,
                 },
             });
-
+            
             if (userExists) {
                 throw new ErrorHandler(400, "User already exists");
             }
